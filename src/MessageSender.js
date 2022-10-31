@@ -7,7 +7,6 @@ import InsertEmoticonIcon from "@material-ui/icons/InsertEmoticon";
 import { useStateValue } from "./StateProvider";
 import db from "./firebase";
 import firebase from "firebase/compat/app";
-// import * as firebase from "firebase/app";
 
 function MessageSender() {
   const [{ user }, dispatch] = useStateValue();
@@ -40,7 +39,6 @@ function MessageSender() {
             onChange={(e) => setInput(e.target.value)}
             className="messageSender__input"
             placeholder={`what's on your mind, ${user.displayName}?`}
-            // placeholder={`what's on your mind?`}
           />
           <input
             value={imageUrl}

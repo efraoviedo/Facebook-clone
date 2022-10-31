@@ -16,7 +16,6 @@ function Sidebar() {
 
   return (
     <div className="sidebar">
-      {/* <SidebarRow src={user.photoURL} title= {user.displayName} /> */}
       <SidebarRow src={user.photoURL} title={user.displayName} />
       {/* //  src="https://avatars.githubusercontent.com/u/105228948?v=4" */}
       {/* //  title="Efranor" */}
