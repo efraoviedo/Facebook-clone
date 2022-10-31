@@ -1,23 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import Feed from "./Feed";
+import Header from "./Header";
+import Login from "./Login";
+import Sidebar from "./Sidebar";
+import Widgets from "./Widgets";
+import { useStateValue } from "./StateProvider";
+import "firebase/compat/auth";
+
+import { composeWithDevTools } from "redux-devtools-extension";
 
 function App() {
+  const [{ user }, dispatch] = useStateValue();
+  //  const user = null;
+  // const user = "Efranor";
+  const myuser = composeWithDevTools();
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      {!user ? (
+        <Login />
+      ) : (
+        <>
+          <Header />
+
+          <div className="app__body">
+            <Sidebar />
+            <Feed />
+            <Widgets />
+          </div>
+        </>
+      )}
     </div>
   );
 }
