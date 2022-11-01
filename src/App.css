@@ -1,3 +1,9 @@
+@media screen and (max-width: 700px) {
+    .container header .Header-Login-widgets-Feed-Sidebar-area  {
+      display:inline-block;
+    }
+  }
+
 .app {
     background-color: #f1f2f5;
 }
